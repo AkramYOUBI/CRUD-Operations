@@ -4,10 +4,7 @@ import com.pca.Productservice.entity.Product;
 import com.pca.Productservice.repository.ProductReposiotry;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
-import java.lang.invoke.MethodType;
 
 @RestController
 @RequestMapping("api/product")
@@ -18,8 +15,8 @@ public class ProductController {
 
 
     @GetMapping("/find/{id}")
-    public Response<Product> findProductById(@PathVariable String id){
-        return productReposiotry.findbyfilter(id);
+    public Product findProductById(@PathVariable Long id){
+        return productReposiotry.findById(id).orElse(null);
     }
 
     @PostMapping("/save")
