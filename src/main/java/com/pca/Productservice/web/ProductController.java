@@ -1,9 +1,12 @@
 package com.pca.Productservice.web;
 
-import com.pca.Productservice.entity.Product;
+import com.pca.Productservice.Service.ProductService;
+import com.pca.Productservice.domain.Product;
+import com.pca.Productservice.domain.Support.SearchCriteria;
 import com.pca.Productservice.repository.ProductReposiotry;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -11,30 +14,37 @@ import org.springframework.web.bind.annotation.*;
 public class ProductController {
 
     @Autowired
-    ProductReposiotry productReposiotry;
-
+    ProductService productService;
 
     @GetMapping("/find/{id}")
     public Product findProductById(@PathVariable Long id){
-        return productReposiotry.findById(id).orElse(null);
+
+        return productService.findById(id);
     }
 
     @PostMapping("/save")
     public Product saveProduct(@RequestBody Product product){
-        return productReposiotry.save(product);
+
+        return productService.save(product);
     }
 
     @RequestMapping(value = "{id}",method = RequestMethod.DELETE)
     public void deleteProductById(@PathVariable Long id){
-        productReposiotry.deleteById(id);
+
+        productService.deleteById(id);
     }
 
     @RequestMapping(value = "{id}",method = RequestMethod.PUT)
     public Product updateProduct(@PathVariable Long id, @RequestBody Product product){
-        Product existingProduct = productReposiotry.findById(id).orElse(null);
+        Product existingProduct = productService.findById(id);
         BeanUtils.copyProperties(product, existingProduct, "product_id");
-        Product product1 = productReposiotry.saveAndFlush(existingProduct);
+        Product product1 = productService.saveAndFlush(existingProduct);
         return  product;
+    }
+
+    @GetMapping("/findbyfilter")
+    public Page<Product> findByFilter(SearchCriteria searchCriteria){
+        return productService.findByFilter(searchCriteria);
     }
 
 }
