@@ -49,11 +49,11 @@ public class ProductService{
         product.setQuantity(searchCriteria.getQuantity());
 
         ExampleMatcher productExampleMatcher = ExampleMatcher.matchingAny()
-                .withMatcher("name",  ExampleMatcher.GenericPropertyMatchers.contains().ignoreCase())
-                .withMatcher("assetTag",  ExampleMatcher.GenericPropertyMatchers.contains().ignoreCase())
-                .withMatcher("price",  ExampleMatcher.GenericPropertyMatchers.contains().ignoreCase())
-                .withMatcher("number",  ExampleMatcher.GenericPropertyMatchers.contains().ignoreCase())
-                .withMatcher("quantity",  ExampleMatcher.GenericPropertyMatchers.contains().ignoreCase());
+                .withMatcher("name",  ExampleMatcher.GenericPropertyMatchers.contains())
+                .withMatcher("assetTag",  ExampleMatcher.GenericPropertyMatchers.contains())
+                .withMatcher("price",  ExampleMatcher.GenericPropertyMatchers.contains())
+                .withMatcher("number",  ExampleMatcher.GenericPropertyMatchers.contains())
+                .withMatcher("quantity",  ExampleMatcher.GenericPropertyMatchers.contains());
         Example<Product> productExample= Example.of(product, productExampleMatcher);
         Page<Product> response = productReposiotry.findAll(productExample,
                 PageRequest.of(searchCriteria.getPageOffset(), searchCriteria.getPageSize()));
