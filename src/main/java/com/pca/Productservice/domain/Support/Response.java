@@ -1,4 +1,4 @@
-package com.pca.Productservice.web;
+package com.pca.Productservice.domain.Support;
 
 
 public class Response<T> {

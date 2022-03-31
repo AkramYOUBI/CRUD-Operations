@@ -3,8 +3,6 @@ package com.pca.Productservice.Service;
 import com.pca.Productservice.domain.Product;
 import com.pca.Productservice.domain.Support.SearchCriteria;
 import com.pca.Productservice.repository.ProductReposiotry;
-import com.pca.Productservice.web.ProductController;
-import com.pca.Productservice.web.Response;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
