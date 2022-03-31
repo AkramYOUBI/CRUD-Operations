@@ -27,7 +27,7 @@ public class ProductController {
 
         return productService.save(product);
     }
-//comment
+
     @RequestMapping(value = "{id}",method = RequestMethod.DELETE)
     public void deleteProductById(@PathVariable Long id){
 
@@ -45,6 +45,11 @@ public class ProductController {
     @GetMapping("/findbyfilter")
     public Page<Product> findByFilter(SearchCriteria searchCriteria){
         return productService.findByFilter(searchCriteria);
+    }
+
+    @GetMapping("/index")
+    public String page(){
+        return "index";
     }
 
 }
