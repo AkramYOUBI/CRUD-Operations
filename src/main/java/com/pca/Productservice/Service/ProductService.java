@@ -1,8 +1,8 @@
 package com.pca.Productservice.Service;
 
-import com.pca.Productservice.domain.Product;
-import com.pca.Productservice.domain.Support.SearchCriteria;
-import com.pca.Productservice.repository.ProductReposiotry;
+import com.pca.Productservice.Domain.entities.Product;
+import com.pca.Productservice.Domain.filters.SearchCriteria;
+import com.pca.Productservice.Domain.repositories.ProductReposiotry;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;

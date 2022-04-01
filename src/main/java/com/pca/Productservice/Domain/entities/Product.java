@@ -1,4 +1,4 @@
-package com.pca.Productservice.domain;
+package com.pca.Productservice.Domain.entities;
 
 import lombok.*;
 

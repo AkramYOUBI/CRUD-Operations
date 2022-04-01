@@ -1,4 +1,4 @@
-package com.pca.Productservice.domain.Support;
+package com.pca.Productservice.Domain.filters;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

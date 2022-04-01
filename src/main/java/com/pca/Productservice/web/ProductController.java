@@ -1,9 +1,8 @@
 package com.pca.Productservice.web;
 
 import com.pca.Productservice.Service.ProductService;
-import com.pca.Productservice.domain.Product;
-import com.pca.Productservice.domain.Support.SearchCriteria;
-import com.pca.Productservice.repository.ProductReposiotry;
+import com.pca.Productservice.Domain.entities.Product;
+import com.pca.Productservice.Domain.filters.SearchCriteria;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

@@ -1,4 +1,4 @@
-package com.pca.Productservice.domain.config;
+package com.pca.Productservice.Domain.config;
 
 import org.keycloak.adapters.springboot.KeycloakSpringBootConfigResolver;
 import org.springframework.context.annotation.Bean;
