@@ -15,8 +15,9 @@ import org.springframework.security.web.authentication.session.SessionAuthentica
 /*
  * Keycloak provides a KeycloakWebSecurityConfigurerAdapter as a convenient base class for creating
  * a WebSecurityConfigurer instance. This is helpful because any application secured by Spring
- * Security requires a configuration class that extends WebSecurityConfigurerAdapter:
- * */
+ * Security requires a configuration class that extends WebSecurityConfigurerAdapter
+ */
+
 
 @KeycloakConfiguration
 class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
