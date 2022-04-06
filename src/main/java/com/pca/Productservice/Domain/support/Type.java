@@ -4,12 +4,12 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @AllArgsConstructor
-public enum Zone {
-    CHECKIN("Check-in Area"),
-    BOARDING("Boarding Area"),
-    TRANSIT("Transit Area"),
-    OPERATION("Operation Area"),
-    BAGGAGE_DISPUTE("Baggage dispute Area");
+public enum Type {
+    APPLE("Apple"),
+    SAMSUNG("Samsung"),
+    HP("Hp"),
+    DELL("Dell"),
+    LENOVO("Lenovo");
 
     @Getter
     private String label;
@@ -17,5 +17,4 @@ public enum Zone {
     public String getLabel() {
         return label;
     }
-
 }

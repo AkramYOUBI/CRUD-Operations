@@ -4,10 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @AllArgsConstructor
-public enum Etat {
-    OK("OK"),
-    NOK("Not OK");
-
+public enum Project {
+    CUTE("CUTE"),
+    EGATE("E-Gate"),
+    BRS("BRS");
     @Getter
     private String label;
 

@@ -1,27 +1,24 @@
 package com.pca.Productservice.Service;
 
-import com.pca.Productservice.Domain.entities.Equipement;
-import com.pca.Productservice.Domain.repositories.EquipementReposiotry;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
 @Getter
 @Setter
-public class EquipementService {
+public class EquipmentService {
 
-    @Autowired
-    private EquipementReposiotry equipementReposiotry;
+    /*@Autowired
+    private AirportRepository equipementReposiotry;
 
-    public Equipement findById(Long id) {
+    public Equipment findById(Long id) {
         return equipementReposiotry.findById(id).orElse(null);
     }
 
-    public Equipement save(Equipement equipement) {
+    public Equipment save(Equipment equipement) {
         return equipementReposiotry.save(equipement);
     }
 
@@ -29,7 +26,7 @@ public class EquipementService {
         equipementReposiotry.deleteById(id);
     }
 
-    public Equipement saveAndFlush(Equipement existingEquipement) {
+    public Equipment saveAndFlush(Equipment existingEquipement) {
         return equipementReposiotry.saveAndFlush(existingEquipement);
     }
 

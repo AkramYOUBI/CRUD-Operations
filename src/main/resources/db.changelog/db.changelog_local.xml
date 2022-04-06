@@ -7,6 +7,6 @@
     <!-- Toujours utiliser le timestamp pour garder une trace et éviter les conflits -->
     <!-- Important: NE JAMAIS MODIFIER un changeSet après son passage en production, JAMAIS ! -->
 
-    <include file="db.changelog/db.changelog.xml"/>
+    <include file="db.changelog/db.changelog_V1.0.xml"/>
 
 </databaseChangeLog>

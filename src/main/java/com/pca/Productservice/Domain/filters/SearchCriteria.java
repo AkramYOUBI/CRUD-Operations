@@ -1,8 +1,7 @@
 package com.pca.Productservice.Domain.filters;
 
-import com.pca.Productservice.Domain.support.Etat;
-import com.pca.Productservice.Domain.support.Terminal;
-import com.pca.Productservice.Domain.support.Zone;
+import com.pca.Productservice.Domain.entities.Airport;
+import com.pca.Productservice.Domain.support.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,19 +12,17 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class SearchCriteria {
-    //Projet-Aeroport
-    private String numeroSerie;
+    private String serialNumber;
     private String assetTag;
     private String nodeName;
-    private String model;
-    private String type;
-    private String emplacement;
-    private Terminal terminal;
-    private Zone zone;
-    private Integer comptoir;
-    private Etat etat;
-    private String commentaire;
+    private Model model;
+    private Type type;
+    private Project project;
+    private Site site;
+    private State state;
     private Integer quantity;
+    private String comment;
+    private Airport airport;
     private Integer pageSize;
     private Integer PageOffset;
 }

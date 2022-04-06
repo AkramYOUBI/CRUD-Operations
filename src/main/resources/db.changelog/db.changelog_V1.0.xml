@@ -1,0 +1,80 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+   http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet author="Akram" id="12345">
+        <createTable tableName="equipmentdb">
+
+            <column name="id" type="VARCHAR(100)">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="serial_number" type="varchar(255)">
+                <!--<constraints nullable="false"/>-->
+            </column>
+            <column name="asset_tag" type="varchar(255)">
+                <!--<constraints nullable="false"/>-->
+            </column>
+            <column name="node_name" type="varchar(255)">
+                <!--<constraints nullable="false"/>-->
+            </column>
+            <column name="model" type="VARCHAR(100)">
+                <!--<constraints nullable="false"/>-->
+            </column>
+            <column name="type" type="VARCHAR(100)">
+                <!--<constraints nullable="false"/>-->
+            </column>
+            <column name="project" type="VARCHAR(100)">
+                <!--<constraints nullable="false"/>-->
+            </column>
+            <column name="site" type="VARCHAR(100)">
+                <!--<constraints nullable="false"/>-->
+            </column>
+            <column name="State" type="VARCHAR(100)">
+                <!--<constraints nullable="false"/>-->
+            </column>
+            <column name="quantity" type="integer(255)">
+                <!--<constraints nullable="false"/>-->
+            </column>
+            <column name="comment" type="TEXT">
+                <!--<constraints nullable="false"/>-->
+            </column>
+
+            <!--************   Airport    ***************-->
+            <column name="airport_id" type="INTEGER(255)">
+                <constraints nullable="false"/>
+            </column>
+
+
+            <!--Document-->
+            <column name="num_facture" type="VARCHAR(100)">
+                <!--<constraints nullable="false"/>-->
+            </column>
+            <column name="date_facture" type="TIMESTAMP">
+                <!--<constraints nullable="false"/>-->
+            </column>
+            <column name="titre_importation" type="VARCHAR(100)">
+                <!--<constraints nullable="false"/>-->
+            </column>
+            <column name="date_importation" type="timestamp">
+                <!--<constraints nullable="false"/>-->
+            </column>
+
+
+            <column name="created_at" type="TIMESTAMP" defaultValueComputed="CURRENT_TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="_version" type="INTEGER" defaultValueNumeric="0">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+        <rollback>
+            <dropTable tableName="Equipment"/>
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>
