@@ -1,19 +1,22 @@
-package com.pca.Productservice.Domain.filters;
+package com.pca.Productservice.Domain.entities;
 
 import com.pca.Productservice.Domain.support.Etat;
 import com.pca.Productservice.Domain.support.Terminal;
 import com.pca.Productservice.Domain.support.Zone;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
-@Getter
-@Setter
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity(name = "productdb")
 @AllArgsConstructor
 @NoArgsConstructor
-public class SearchCriteria {
-    //Projet-Aeroport
+@Getter
+@Setter
+public class Equipement {
+    @Id @GeneratedValue
+    private Long id;
     private String numeroSerie;
     private String assetTag;
     private String nodeName;
@@ -26,6 +29,4 @@ public class SearchCriteria {
     private Etat etat;
     private String commentaire;
     private Integer quantity;
-    private Integer pageSize;
-    private Integer PageOffset;
 }
