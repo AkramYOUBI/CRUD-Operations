@@ -11,7 +11,7 @@ import java.util.Date;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Document {
+public class Facture {
     private String numFacture;
     private Date dateFacture;
     private String titreImportation;

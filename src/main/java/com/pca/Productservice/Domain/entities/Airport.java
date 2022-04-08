@@ -1,5 +1,6 @@
 package com.pca.Productservice.Domain.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.pca.Productservice.Domain.support.Terminal;
 import com.pca.Productservice.Domain.support.Zone;
 import lombok.AllArgsConstructor;
@@ -15,16 +16,12 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
-@Entity
+@Entity(name = "airportdb")
 public class Airport {
+    //Solving problem in the copy properties(update, ignoreprop...)
     @Id @GeneratedValue
     private Integer airport_id;
-    private String name;
-    private String city;
-    private Terminal terminal;
-    private Zone zone;
-    private String counter;
+    private String airport_name;
+    private String airport_city;
 
-    @OneToMany( targetEntity=Equipment.class, mappedBy="airport" )
-    private List<Equipment> equipmentList = new ArrayList<>();
 }

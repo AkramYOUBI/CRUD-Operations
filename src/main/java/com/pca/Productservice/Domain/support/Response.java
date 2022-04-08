@@ -1,10 +1,16 @@
 package com.pca.Productservice.Domain.support;
 
+import lombok.*;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Response<T> {
-    private String Status;
-    private int Error;
-    private T Data;
-    private String Exception;
+    private boolean success;
+    private int status;
+    private T data;
+    private String error;
+
 
 }

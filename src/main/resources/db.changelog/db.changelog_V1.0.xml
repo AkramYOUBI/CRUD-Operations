@@ -7,9 +7,19 @@
    http://www.liquibase.org/xml/ns/dbchangelog
    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
 
-    <changeSet author="Akram" id="12345">
+    <changeSet author="AkramYOUBI" id="30111997">
+        <createTable tableName="airportdb">
+            <column name="airport_id" type="INTEGER(255)" >
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="airport_name" type="VARCHAR(100)" >
+                <constraints nullable="false"/>
+            </column>
+            <column name="airport_city" type="VARCHAR(100)" >
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
         <createTable tableName="equipmentdb">
-
             <column name="id" type="VARCHAR(100)">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
@@ -43,14 +53,16 @@
             <column name="comment" type="TEXT">
                 <!--<constraints nullable="false"/>-->
             </column>
-
-            <!--************   Airport    ***************-->
-            <column name="airport_id" type="INTEGER(255)">
-                <constraints nullable="false"/>
+            <column name="terminal" type="TEXT">
+                <!--<constraints nullable="false"/>-->
             </column>
-
-
-            <!--Document-->
+            <column name="zone" type="TEXT">
+                <!--<constraints nullable="false"/>-->
+            </column>
+            <column name="counter" type="TEXT">
+                <!--<constraints nullable="false"/>-->
+            </column>
+            <!--Facture-->
             <column name="num_facture" type="VARCHAR(100)">
                 <!--<constraints nullable="false"/>-->
             </column>
@@ -63,18 +75,19 @@
             <column name="date_importation" type="timestamp">
                 <!--<constraints nullable="false"/>-->
             </column>
-
-
             <column name="created_at" type="TIMESTAMP" defaultValueComputed="CURRENT_TIMESTAMP">
                 <constraints nullable="false"/>
             </column>
             <column name="_version" type="INTEGER" defaultValueNumeric="0">
                 <constraints nullable="true"/>
             </column>
+            <!--************   Airport    ***************-->
+            <column name="airport_id" type="INTEGER(255)">
+            <constraints nullable="false"
+                         foreignKeyName="fk_id_equipment_airport"
+                         references="airportdb(airport_id)"
+            />
+            </column>
         </createTable>
-        <rollback>
-            <dropTable tableName="Equipment"/>
-        </rollback>
     </changeSet>
-
 </databaseChangeLog>

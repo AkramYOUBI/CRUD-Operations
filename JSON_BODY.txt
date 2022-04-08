@@ -1,0 +1,26 @@
+{
+        "serialNumber":"ASXEFB19A01",
+        "assetTag":"AQWVF4E88M",
+        "nodeName": "ALaraki-HP",
+        "quantity": 1,
+        "comment": "BIEN",
+        "model": "PC",
+        "type": "HP",
+        "project": "CUTE",
+        "site": "PROD",
+        "state": "OK",
+        "terminal":"T1",
+        "zone":"BAGGAGE_DISPUTE",
+        "counter": "2",
+        "facture":{
+            "numFacture":"facture_01",
+            "dateFacture":"2019-01-22",
+            "titreImportation":"Import_ADHU62OO",
+            "dateImportation":"2015-03-12"
+        },
+        "airport":{
+             "id":1,
+             "name":"Mohammed V",
+             "city":"Casablanca"
+            }       
+    }

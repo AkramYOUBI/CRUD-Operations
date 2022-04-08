@@ -1,5 +1,6 @@
 package com.pca.Productservice.Domain.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.pca.Productservice.Domain.support.*;
 import lombok.*;
 
@@ -19,6 +20,9 @@ public class Equipment extends BaseEntity<CommonId> {
     private String nodeName;
     private Integer quantity;
     private String comment;
+    private Terminal terminal;
+    private Zone zone;
+    private Counter counter;
 
     @Enumerated(EnumType.STRING)
     private Model model;
@@ -31,29 +35,31 @@ public class Equipment extends BaseEntity<CommonId> {
     @Enumerated(EnumType.STRING)
     private State state;
 
-    @ManyToOne @JoinColumn(name="airport_id", nullable=false)
-    private Airport airport;
-
     @Embedded
     @AttributeOverrides({
             @AttributeOverride(
                     name = "numFacture",
-                    column = @Column(name = "document_num_facture")),
+                    column = @Column(name = "num_facture")
+            ),
             @AttributeOverride(
                     name = "dateFacture",
-                    column = @Column(name = "document_date_facture")
+                    column = @Column(name = "date_facture")
             ),
             @AttributeOverride(
                     name = "titreImportation",
-                    column = @Column(name = "document_titre_importation")
+                    column = @Column(name = "titre_importation")
             ),
             @AttributeOverride(
                     name = "dateImportation",
-                    column = @Column(name = "document_date_importation")
+                    column = @Column(name = "date_importation")
             ),
 
     })
-    private Document document;
+    private Facture facture;
+
+    @ManyToOne
+    @JoinColumn(name = "airport_id")
+    private Airport airport;
 
 
     @PrePersist

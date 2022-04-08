@@ -1,8 +1,10 @@
 package com.pca.Productservice.web;
 
 import com.pca.Productservice.Domain.entities.Equipment;
+import com.pca.Productservice.Domain.support.Response;
 import com.pca.Productservice.Service.EquipmentService;
 import com.pca.Productservice.Domain.filters.SearchCriteria;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
@@ -12,41 +14,31 @@ import org.springframework.web.bind.annotation.*;
 public class EquipmentController {
 
     @Autowired
-    EquipmentService equipmentService;
+    private EquipmentService equipmentService;
 
     @GetMapping("/find/{id}")
-    public Equipment findEquipementById(@PathVariable Long id){
-
-        //return equipmentService.findById(id);
-        return null;
+    public Response<Equipment> findEquipmentById(@PathVariable String id){
+        return equipmentService.findEquipmentById(id);
     }
 
     @PostMapping("/save")
-    public Equipment saveEquipement(@RequestBody Equipment equipement){
-        //return equipementService.save(equipement);
-        return null;
+    public Response<Equipment> saveEquipment(@RequestBody Equipment equipement){
+        return equipmentService.saveEquipment(equipement);
     }
 
     @RequestMapping(value = "{id}",method = RequestMethod.DELETE)
-    public void deleteEquipementById(@PathVariable Long id){
-
-        //equipmentService.deleteById(id);
-
+    public void deleteEquipmentById(@PathVariable String id){
+        equipmentService.deleteEquipmentById(id);
     }
 
-    @RequestMapping(value = "{id}",method = RequestMethod.PUT)
-    public Equipment updateEquipement(@PathVariable Long id, @RequestBody Equipment equipement){
-        //Equipment existingEquipement = equipmentService.findById(id);
-        //BeanUtils.copyProperties(equipement, existingEquipement, "equipement_id");
-        //Equipment newEquipement = equipmentService.saveAndFlush(existingEquipement);
-        //return  newEquipement;
-        return null;
+    @PutMapping("/update/{id}")
+    public Response<Equipment> updateEquipement(@PathVariable String id, @RequestBody Equipment equipment){
+        return equipmentService.updateEquipment(id, equipment);
     }
 
-    @GetMapping("/findbyfilter")
+    @GetMapping("/findByFilter")
     public Page<Equipment> findByFilter(SearchCriteria searchCriteria){
-        //return equipementService.findByFilter(searchCriteria);
-        return null;
+        return equipmentService.findByFilter(searchCriteria);
     }
 
     @GetMapping("/index")
