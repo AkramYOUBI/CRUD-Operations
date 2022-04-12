@@ -4,12 +4,13 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @AllArgsConstructor
-public enum Terminal {
-    T1("Terminal 1"),
-    T2("Terminal 2"),
-    T3("Terminal 3"),
-    T4("Terminal 4"),
-    T5("Terminal 5");
+public enum Zone_name {
+    CHECKIN("Check-in Area"),
+    BOARDING("Boarding Area"),
+    TRANSIT("Transit Area"),
+    OPERATION("Operation Area"),
+    BAGGAGE_DISPUTE("Baggage dispute Area");
+
     @Getter
     private String label;
 

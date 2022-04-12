@@ -20,9 +20,6 @@ public class Equipment extends BaseEntity<CommonId> {
     private String nodeName;
     private Integer quantity;
     private String comment;
-    private Terminal terminal;
-    private Zone zone;
-    private Counter counter;
 
     @Enumerated(EnumType.STRING)
     private Model model;
@@ -60,6 +57,15 @@ public class Equipment extends BaseEntity<CommonId> {
     @ManyToOne
     @JoinColumn(name = "airport_id")
     private Airport airport;
+    @ManyToOne
+    @JoinColumn(name = "terminal_id")
+    private Terminal terminal;
+    @ManyToOne
+    @JoinColumn(name = "zone_id")
+    private Zone zone;
+    @ManyToOne
+    @JoinColumn(name = "counter_id")
+    private Counter counter;
 
 
     @PrePersist
