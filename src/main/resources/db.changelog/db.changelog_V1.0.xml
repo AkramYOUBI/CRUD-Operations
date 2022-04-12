@@ -19,6 +19,30 @@
                 <constraints nullable="false"/>
             </column>
         </createTable>
+        <createTable tableName="terminaldb">
+            <column name="terminal_id" type="INTEGER(255)" >
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="terminal_name" type="VARCHAR(100)" >
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <createTable tableName="zonedb">
+            <column name="zone_id" type="INTEGER(255)" >
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="zone_name" type="VARCHAR(100)" >
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <createTable tableName="counterdb">
+            <column name="counter_id" type="INTEGER(255)" >
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="counter_name" type="VARCHAR(100)" >
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
         <createTable tableName="equipmentdb">
             <column name="id" type="VARCHAR(100)">
                 <constraints primaryKey="true" nullable="false"/>
@@ -86,6 +110,27 @@
             <constraints nullable="false"
                          foreignKeyName="fk_id_equipment_airport"
                          references="airportdb(airport_id)"
+                />
+            </column>
+            <!--************   Terminal    ***************-->
+            <column name="terminal_id" type="INTEGER(255)">
+            <constraints nullable="false"
+                         foreignKeyName="fk_id_equipment_Terminal"
+                         references="terminaldb(terminal_id)"
+            />
+            </column>
+            <!--************   Zone    ***************-->
+            <column name="zone_id" type="INTEGER(255)">
+            <constraints nullable="false"
+                         foreignKeyName="fk_id_equipment_zone"
+                         references="zonedb(zone_id)"
+            />
+            </column>
+            <!--************   Counter    ***************-->
+            <column name="counter_id" type="INTEGER(255)">
+            <constraints nullable="false"
+                         foreignKeyName="fk_id_equipment_counter"
+                         references="counterdb(counter_id)"
             />
             </column>
         </createTable>
