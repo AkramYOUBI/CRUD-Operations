@@ -23,7 +23,7 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor
 @Getter
 @Setter
-public class EquipmentService {
+public class EquipmentService  {
 
 
     private final EquipmentRepository equipmentRepository;
